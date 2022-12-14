@@ -115,7 +115,7 @@ class login extends Component {
     // console.log(this.state)
     e.preventDefault();
     // console.log(this.state.LcNo);
-    this.Auth.fetch("http://localhost:5000/api/signup", {
+    this.Auth.fetch("http://backend-two-phi.vercel.app/api/signup", {
       method: "POST",
       body: JSON.stringify({
         email: this.state.email,
@@ -130,26 +130,22 @@ class login extends Component {
       }),
     })
       .then((res) => {
-        // console.log("signup", res)
         this.props.history.replace("/");
       })
       .catch((err) => {
-        // console.log('signup', err)
+        ('signup', err)
       });
   };
 
   handleFormSubmit = (e) => {
-    // e.preventDefault();
-
-    // this.Auth.login(this.state.username, this.state.password)
+   
     e.preventDefault();
-    // console.log(this.state)
     this.Auth.login(this.state.userName, this.state.password)
       .then((res) => {
         const profile = this.Auth.getProfile();
         if (profile.isAdmin === "yes") this.props.history.replace("/Admin");
         else {
-          this.Auth.fetch("http://localhost:5000/api/getuser", {
+          this.Auth.fetch("http://backend-two-phi.vercel.app/api/getuser", {
             method: "POST",
             body: JSON.stringify({}),
           }).then((res) => {
@@ -203,7 +199,7 @@ class login extends Component {
       }
     );
 
-    this.Auth.fetch("http://localhost:5000/api/checkforusername", {
+    this.Auth.fetch("http://backend-two-phi.vercel.app/api/checkforusername", {
       method: "POST",
       body: JSON.stringify({
         username: value,
