@@ -13,7 +13,7 @@ export default class AuthService {
   login(username, password) {
     // Get a token from api server using the fetch api
     //     console.log('in authlogin')
-    //     axios.post('https://pharma-supply-chain.herokuapp.com/login', {
+    //     axios.post('https://pharma-supply-chain.herokuapp.com/api/login', {
     //         "userName": username,
     //         "password": password
     //     })

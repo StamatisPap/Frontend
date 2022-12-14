@@ -26,7 +26,7 @@ class UserCard extends Component {
     let distc = 0;
     let retac = 0;
     let displayCount, displayUser;
-    this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/displayallusers", {
+    this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/api/displayallusers", {
       method: "POST",
       body: JSON.stringify({}),
     })

@@ -14,7 +14,7 @@ class UserNotification extends Component {
     //this.getTrans();
     this.getMaxId();
 
-    this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/getuser", {
+    this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/api/getuser", {
       method: "POST",
       body: JSON.stringify({}),
     })
@@ -119,7 +119,7 @@ class UserNotification extends Component {
   };
 
   getMaxId = () => {
-    this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/givemaxeid", {
+    this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/api/givemaxeid", {
       method: "POST",
       body: JSON.stringify({}),
     })
@@ -143,7 +143,7 @@ class UserNotification extends Component {
       .getAccounts()
       .then((r) => {
         // console.log(r[0]);
-        this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/getnotifs", {
+        this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/api/getnotifs", {
           method: "POST",
           body: JSON.stringify({
             acc: r[0],
@@ -287,7 +287,7 @@ class UserNotification extends Component {
               })
               .then((re) => {
                 this.setState({ showForward: true, loading: false });
-                this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/acceptmeds", {
+                this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/api/acceptmeds", {
                   method: "POST",
                   body: JSON.stringify({
                     //send id
@@ -316,7 +316,7 @@ class UserNotification extends Component {
               })
               .then((re) => {
                 this.setState({ showForward: true, loading: false });
-                this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/acceptmeds", {
+                this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/api/acceptmeds", {
                   method: "POST",
                   body: JSON.stringify({
                     //send id
@@ -364,7 +364,7 @@ class UserNotification extends Component {
             })
             .then((re) => {
               this.setState({ showForward: true });
-              this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/rejectmeds", {
+              this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/api/rejectmeds", {
                 method: "POST",
                 body: JSON.stringify({
                   //send id
@@ -406,7 +406,7 @@ class UserNotification extends Component {
         // console.log(r[0] + " This is current account address");
         // console.log(this.state.Name)
         console.log(name, "username")
-        this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/gettrans", {
+        this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/api/gettrans", {
           method: "POST",
           body: JSON.stringify({
             acc: r[0],
@@ -467,7 +467,7 @@ class UserNotification extends Component {
                 );
 
                 // console.log(re.transactionHash)
-                this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/addmed", {
+                this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/api/addmed", {
                   method: "POST",
                   body: JSON.stringify({
                     tid: re.transactionHash,
@@ -511,7 +511,7 @@ class UserNotification extends Component {
               .then((re) => {
                 // console.log("this is very good", re);
                 // console.log(re.transactionHash);
-                this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/setdist", {
+                this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/api/setdist", {
                   method: "POST",
                   body: JSON.stringify({
                     tid: re.transactionHash,
@@ -526,7 +526,7 @@ class UserNotification extends Component {
                   .then((res) => {
                     this.setState({ results: res, loading: false });
                     // console.log(this.state)
-                    this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/updatenot", {
+                    this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/api/updatenot", {
                       method: "POST",
                       body: JSON.stringify({
                         Id: id,
@@ -562,7 +562,7 @@ class UserNotification extends Component {
               })
               .then((re) => {
                 // console.log(re.transactionHash)
-                this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/sell", {
+                this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/api/sell", {
                   method: "POST",
                   body: JSON.stringify({
                     tid: re.transactionHash,
@@ -575,7 +575,7 @@ class UserNotification extends Component {
                   .then((res) => {
                     this.setState({ results: res, loading: false });
                     // console.log(this.state)
-                    this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/updatenot", {
+                    this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/api/updatenot", {
                       method: "POST",
                       body: JSON.stringify({
                         Id: id,
@@ -660,7 +660,7 @@ class UserNotification extends Component {
               .send({from: r[0]})
               .then((re) => {
             
-                this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/destroymed", {
+                this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/api/destroymed", {
                   method: "POST",
                   body: JSON.stringify({
                  

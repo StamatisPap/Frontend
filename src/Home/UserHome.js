@@ -14,7 +14,7 @@ class UserHome extends Component {
 
     this.updateLoginAccountStatus();
     this.getMaxId();
-    this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/getuser", {
+    this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/api/getuser", {
       method: "POST",
       body: JSON.stringify({}),
     })
@@ -110,7 +110,7 @@ class UserHome extends Component {
       }
     });
 
-    this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/getuser", {
+    this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/api/getuser", {
       method: "POST",
       body: JSON.stringify({}),
     }).then((res) => {
@@ -157,7 +157,7 @@ class UserHome extends Component {
         // console.log(r[0] + " This is current account address");
         // console.log(this.state.Name)
         console.log(name, "name")
-        this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/gettrans", {
+        this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/api/gettrans", {
           method: "POST",
           body: JSON.stringify({
             acc: r[0],
@@ -185,7 +185,7 @@ class UserHome extends Component {
       .then((r) => {
         // console.log(r[0]);
         console.log(name, "name")
-        this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/getnotifs", {
+        this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/api/getnotifs", {
           method: "POST",
           body: JSON.stringify({
             acc: r[0],
@@ -206,7 +206,7 @@ class UserHome extends Component {
   };
 
   getMaxId = () => {
-    this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/givemaxeid", {
+    this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/api/givemaxeid", {
       method: "POST",
       body: JSON.stringify({}),
     })
@@ -286,7 +286,7 @@ class UserHome extends Component {
                   );
 
                   // console.log(re.transactionHash)
-                  this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/addmed", {
+                  this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/api/addmed", {
                     method: "POST",
                     body: JSON.stringify({
                       tid: re.transactionHash,
@@ -328,7 +328,7 @@ class UserHome extends Component {
               })
               .then((re) => {
               
-                this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/setdist", {
+                this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/api/setdist", {
                   method: "POST",
                   body: JSON.stringify({
                     tid: re.transactionHash,
@@ -343,7 +343,7 @@ class UserHome extends Component {
                   .then((res) => {
                     this.setState({ results: res, loading: false });
                     // console.log(this.state)
-                    this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/updatenot", {
+                    this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/api/updatenot", {
                       method: "POST",
                       body: JSON.stringify({
                         Id: id,
@@ -378,7 +378,7 @@ class UserHome extends Component {
               })
               .then((re) => {
                 // console.log(re.transactionHash)
-                this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/sell", {
+                this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/api/sell", {
                   method: "POST",
                   body: JSON.stringify({
                     tid: re.transactionHash,
@@ -391,7 +391,7 @@ class UserHome extends Component {
                   .then((res) => {
                     this.setState({ loading: false });
                     // console.log(this.state)
-                    this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/updatenot", {
+                    this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/api/updatenot", {
                       method: "POST",
                       body: JSON.stringify({
                         Id: id,

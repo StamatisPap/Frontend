@@ -30,7 +30,7 @@ class AdminNav extends Component {
     if (Auth.loggedIn()) {
       const user = Auth.getProfile();
       this.state = { user: user };
-      Auth.fetch("https://pharma-supply-chain.herokuapp.com/getuser", {
+      Auth.fetch("https://pharma-supply-chain.herokuapp.com/api/getuser", {
         method: "POST",
         body: JSON.stringify({}),
       })
@@ -76,7 +76,7 @@ class AdminNav extends Component {
       .getAccounts()
       .then((r) => {
         console.log(this.state.name);
-        this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/getnotifs", {
+        this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/api/getnotifs", {
           method: "POST",
           body: JSON.stringify({
             acc: r[0],

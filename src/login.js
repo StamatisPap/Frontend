@@ -115,7 +115,7 @@ class login extends Component {
     // console.log(this.state)
     e.preventDefault();
     // console.log(this.state.LcNo);
-    this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/signup", {
+    this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/api/signup", {
       method: "POST",
       body: JSON.stringify({
         email: this.state.email,
@@ -149,7 +149,7 @@ class login extends Component {
         const profile = this.Auth.getProfile();
         if (profile.isAdmin === "yes") this.props.history.replace("/Admin");
         else {
-          this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/getuser", {
+          this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/api/getuser", {
             method: "POST",
             body: JSON.stringify({}),
           }).then((res) => {
@@ -203,7 +203,7 @@ class login extends Component {
       }
     );
 
-    this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/checkforusername", {
+    this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/api/checkforusername", {
       method: "POST",
       body: JSON.stringify({
         username: value,
