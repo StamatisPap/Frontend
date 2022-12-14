@@ -30,11 +30,9 @@ class UserNotification extends Component {
         this.getTrans(res.userName);
         this.getNotifs(res.userName);
         web3.eth.getAccounts((err, accounts) => {
-          // console.log(err, accounts)
           if (err) {
-            // console.log('An error occurred ' + err);
+            console.log(err);
           } else if (accounts[0] !== res.address) {
-            // alert( 'Please login into MetaMask with your registered account..!');
             swal({
               title: "Please Note",
               text: "Please login into MetaMask with your registered account..!",
@@ -48,7 +46,7 @@ class UserNotification extends Component {
         });
       })
       .catch((err) => {
-        // console.log('view own Question error', err)
+        console.log( err)
       });
   }
   constructor(props) {
