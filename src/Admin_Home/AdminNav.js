@@ -30,7 +30,7 @@ class AdminNav extends Component {
     if (Auth.loggedIn()) {
       const user = Auth.getProfile();
       this.state = { user: user };
-      Auth.fetch("http://backend-two-phi.vercel.app/api/getuser", {
+      Auth.fetch("https://pharma-supply-chain.herokuapp.com/getuser", {
         method: "POST",
         body: JSON.stringify({}),
       })
@@ -76,7 +76,7 @@ class AdminNav extends Component {
       .getAccounts()
       .then((r) => {
         console.log(this.state.name);
-        this.Auth.fetch("http://backend-two-phi.vercel.app/api/getnotifs", {
+        this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/getnotifs", {
           method: "POST",
           body: JSON.stringify({
             acc: r[0],

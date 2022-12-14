@@ -24,7 +24,7 @@ class RequestCard extends Component {
   }
 
   getUsers = () => {
-    this.Auth.fetch("http://backend-two-phi.vercel.app/api/getalluser", {
+    this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/getalluser", {
       method: "POST",
       body: JSON.stringify({}),
     })
@@ -88,7 +88,7 @@ class RequestCard extends Component {
               from: r[0],
             })
             .then((re) => {
-              this.Auth.fetch("http://backend-two-phi.vercel.app/api/accept", {
+              this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/accept", {
                 method: "POST",
                 body: JSON.stringify({
                   Id: id,
@@ -117,7 +117,7 @@ class RequestCard extends Component {
   };
 
   declineHandler = (id) => {
-    this.Auth.fetch("http://backend-two-phi.vercel.app/api/reject", {
+    this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/reject", {
       method: "POST",
       body: JSON.stringify({
         Id: id,

@@ -115,7 +115,7 @@ class login extends Component {
     // console.log(this.state)
     e.preventDefault();
     // console.log(this.state.LcNo);
-    this.Auth.fetch("http://backend-two-phi.vercel.app/api/signup", {
+    this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/signup", {
       method: "POST",
       body: JSON.stringify({
         email: this.state.email,
@@ -130,22 +130,26 @@ class login extends Component {
       }),
     })
       .then((res) => {
+        // console.log("signup", res)
         this.props.history.replace("/");
       })
       .catch((err) => {
-        ('signup', err)
+        // console.log('signup', err)
       });
   };
 
   handleFormSubmit = (e) => {
-   
+    // e.preventDefault();
+
+    // this.Auth.login(this.state.username, this.state.password)
     e.preventDefault();
+    // console.log(this.state)
     this.Auth.login(this.state.userName, this.state.password)
       .then((res) => {
         const profile = this.Auth.getProfile();
         if (profile.isAdmin === "yes") this.props.history.replace("/Admin");
         else {
-          this.Auth.fetch("http://backend-two-phi.vercel.app/api/getuser", {
+          this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/getuser", {
             method: "POST",
             body: JSON.stringify({}),
           }).then((res) => {
@@ -199,7 +203,7 @@ class login extends Component {
       }
     );
 
-    this.Auth.fetch("http://backend-two-phi.vercel.app/api/checkforusername", {
+    this.Auth.fetch("https://pharma-supply-chain.herokuapp.com/checkforusername", {
       method: "POST",
       body: JSON.stringify({
         username: value,
