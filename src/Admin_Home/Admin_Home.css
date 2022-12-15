@@ -164,6 +164,11 @@
         font-weight: 500;
         font-size: 23px;
     }
+
+    .logo {
+        width: 190px;
+        height: 30px;
+    }
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 900px) {

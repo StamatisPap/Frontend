@@ -12,14 +12,14 @@ class HomePage extends Component {
         <AdminNav homeUrl="/" notifUrl="/" history={this.props.history} />
         <div>
           <div className="container">
-            <div className="row d-none d-lg-flex d-xl-flex align-items-center"
-            style={{ height: "calc(100vh - 90px)" }}
+            <div className="row d-lg-flex d-xl-flex align-items-center"
+            style={{ minHeight: "calc(100vh - 90px)",position:'relative' }}
             
             >
               {/* <div className="col-3 d-flex align-items-center" style={{ height: "calc(100vh - 90px)" }}>
                 <img src={pharmacist} alt="pharmacist" className="pharmacist" />
               </div> */}
-            <div className="col-9 mt-4" 
+            <div className="col-12 col-lg-9 mt-4" 
             // style={{ height: "calc(100vh - 90px)" }}
             >
                 <div className="text-container">
@@ -67,7 +67,7 @@ class HomePage extends Component {
                   </div>
                 </div>
               </div>
-                <div className="col-3 d-flex align-items-end"
+                <div className="col-12 col-lg-3 d-flex align-items-end hero_img"
                 style={{minHeight:'100%'}}
                 //  style={{ height: "calc(100vh - 90px)" }}
                  >
@@ -75,8 +75,8 @@ class HomePage extends Component {
               </div>
             </div>
 
-            <div className="row d-block d-lg-none d-xl-none ">
-              <div className="col-12 mt-5">
+            {/* <div className="row d-block d-lg-none d-xl-none ">
+              <div className="col-12 mt-5 loginbackgroundimg">
                 <img
                   src={loginBackground}
                   alt="loginBackground"
@@ -140,9 +140,9 @@ class HomePage extends Component {
                       or retailer to sell to the end customer. Have a nice journey!
                     </p>
                   </div>
-                </div>
-              </div>
-            </div>
+                </div> 
+              </div> 
+            </div> */} 
           </div>
         </div>
       </div>

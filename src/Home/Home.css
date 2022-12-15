@@ -123,14 +123,16 @@ input[type="password"] {
   width: 100%;
   background-image: url("../Assets/indexBackground.png");
 }
-
+.hero_img{
+  position:static;
+}
 .pharmacist {
   
-  /* position: absolute; */
-  transform: scale(1.8) translateX(-50px) translateY(-22%)  ;
-  width: 500px;
+  position: absolute;
+  /* transform: scale(1.8) translateX(-50px)   ; */
+  width: 700px;
   bottom: 0px;
-  right: 0px;
+  right: -100px;
 
 }
 
@@ -152,6 +154,10 @@ input[type="password"] {
   padding-left: 5%;
   padding-right: 5%;
   /* font-size: 20px; */
+}
+
+.loginbackgroundimg {
+  background-image: url("../Assets/indexBackground.png");
 }
 
 @media only screen and (min-width: 1224px) {
@@ -181,13 +187,44 @@ input[type="password"] {
     width: 50%;
   }
 }
+@media (max-width: 992px) {
+  .pharmacist {
+    width: 500px;
+    transform: translateX(-16%) scale(1.5);
+    position: static;
+  }
+
+  .hero_img {
+    margin-top: 50px; 
+    min-height: 420px !important;
+    align-items: flex-start !important;
+ }
+  
+}
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+
+  /* .pharmacist {
+    transform: translateX(-35%) scale(1.5);
+    position: static;
+  } */
+  
+  .loginbackgroundimg {
+    background-image: url("../Assets/indexBackground.png");
+  }
+
+  /* .hero_img {
+     margin-top: 50px; 
+     min-height: 420px !important;
+     align-items: flex-start !important;
+  } */
+
   .WelcomeUser {
     font-size: 16px;
     float: none;
     text-align: center;
   }
+
   .addmediformspan {
     float: left;
   }

@@ -153,7 +153,7 @@ class AdminNav extends Component {
       <div className="nav-container">
         <Navbar collapseOnSelect className="container h-100">
           <Navbar.Brand href={this.props.homeUrl}>
-            <img src={logo} alt="logo" width="246px" height="40px" />
+            <img className="logo" src={logo} alt="logo" width="246px" height="40px" />
           </Navbar.Brand>
 
           {this.state.user ? (
